@@ -17,8 +17,14 @@ public class PantallaGrafica
         
         for(int i = 0; i < cantTerrenos ; i++)
         {
-            Object[] tiposTerreno = { "Triangular", "Rectangular", "Trapezoidal" };
-            String forma = (String)JOptionPane.showInputDialog(null, "Escoja tipo de terreno", "Terrenos disponibles", JOptionPane.INFORMATION_MESSAGE, null, tiposTerreno, tiposTerreno[0]);
+            String[] tiposTerreno = { "Triangular", "Rectangular", "Trapezoidal" }; 
+            String forma = (String)JOptionPane.showInputDialog(null, 
+                                                                "Escoja tipo de terreno", 
+                                                                "Terrenos disponibles", 
+                                                                JOptionPane.INFORMATION_MESSAGE, 
+                                                                null, 
+                                                                tiposTerreno, 
+                                                                tiposTerreno[0]);
             double largo = Double.parseDouble(JOptionPane.showInputDialog(null, "Ingrese el largo del terreno " + (i + 1)+":"));
             double ancho = Double.parseDouble(JOptionPane.showInputDialog(null, "Ingrese el ancho del terreno " + (i + 1)+":"));
             String sector = JOptionPane.showInputDialog(null, "Ingrese el sector del terreno "+ (i + 1) + " (Urbano/Rural): ");
