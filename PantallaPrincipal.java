@@ -16,6 +16,9 @@ import javax.swing.JComboBox;
 import javax.swing.event.ListSelectionListener;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.border.EtchedBorder;
+import java.awt.event.KeyListener;
+import java.awt.event.KeyEvent;
+
 
 public class PantallaPrincipal extends JFrame implements ActionListener
 {
@@ -95,8 +98,28 @@ public class PantallaPrincipal extends JFrame implements ActionListener
         JLabel lblLargo = new JLabel("Largo:");
         addEtiqueta(lblLargo, 50, 210, 100, 20, formulario);
         
-        txtLargo = new JTextField("0");
-        addCajaTexto(txtLargo, 150, 210, 200, 20, formulario);
+        txtLargo = new JTextField("");
+        txtLargo.setBounds(150, 210, 100, 20);
+        txtLargo.addKeyListener(new KeyListener(){
+            public void keyTyped( KeyEvent e ) {
+                char caracter = e.getKeyChar();
+                if (((caracter < '0') || (caracter > '9'))
+                        && (caracter != '\b')) {
+                    e.consume();
+                }
+            }
+            @Override              
+            public void keyReleased( KeyEvent e ) 
+            {                
+                
+            }
+            @Override
+            public void keyPressed(KeyEvent e) 
+            {
+            }            
+        });
+
+        formulario.add(txtLargo);
         
         lblLargo2 = new JLabel("Largo 2:");
         lblLargo2.setVisible(false);
@@ -177,6 +200,22 @@ public class PantallaPrincipal extends JFrame implements ActionListener
         cajaTexto.setBounds(x, y, width, height);
         contenedor.add(cajaTexto);
     }
+    
+    
+    // private void addCajaTextoNumerico(JTextField cajaTexto, int x, int y, int width, int height, Container contenedor)
+    // {
+        // cajaTexto.setBounds(x, y, width, height);
+        // cajaTexto.addKeyListener(new KeyAdapter() {
+            // public void keyPressed(KeyEvent e) {
+                // char caracter = e.getKeyChar();
+                // if (((caracter < '0') || (caracter > '9'))
+                        // && (caracter != '\b')) {
+                    // e.consume();
+                // }    
+            // }
+        // });
+        // contenedor.add(cajaTexto);
+    // }
     
     
     public void actionPerformed(ActionEvent e)
