@@ -4,9 +4,11 @@ public class Principal
 {
     public static void main(String [] args)
     {
-        PantallaGrafica p = new PantallaGrafica();
+        /*PantallaGrafica p = new PantallaGrafica();
         p.preguntarDatos();
         p.calcularPrecio();
-        p.mostrarSuma();
+        p.mostrarSuma();*/
+        
+        PantallaPrincipal p = new PantallaPrincipal();
     }
 }

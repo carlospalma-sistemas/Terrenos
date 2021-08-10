@@ -7,14 +7,29 @@ public class TerrenoTriangular extends Terreno
         super(largo, ancho, sector);
     }
     
+    
+    public TerrenoTriangular(String direccion, String ciudad, String sector, double largo, double ancho)
+    {
+        super(direccion, ciudad, sector, largo, ancho);
+    }
+    
+    
+    public TerrenoTriangular(int id, String direccion, String ciudad, String sector, double largo, double ancho)
+    {
+        super(direccion, ciudad, sector, largo, ancho);
+        this.id = id;
+    }
+    
+    
     /**
      * Calcular el área del terreno triangular
      */
     public double getArea()
     {
-        area = largo * ancho / 2;
+        double area = largo * ancho / 2;
         return area;
     }
+    
     
     /**
      * Genera información del terreno triangular

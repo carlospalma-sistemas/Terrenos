@@ -7,11 +7,25 @@ public class TerrenoRectangular extends Terreno
         super(largo, ancho, sector);
     }
     
+    
+    public TerrenoRectangular(String direccion, String ciudad, String sector, double largo, double ancho)
+    {
+        super(direccion, ciudad, sector, largo, ancho);
+    }
+    
+    public TerrenoRectangular(int id, String direccion, String ciudad, String sector, double largo, double ancho)
+    {
+        super(direccion, ciudad, sector, largo, ancho);
+        this.id = id;
+    }
+    
+    
     public double getArea()
     {
-        area = largo * ancho;
+        double area = largo * ancho;
         return area;
     }
+    
     
     public String toString()
     {

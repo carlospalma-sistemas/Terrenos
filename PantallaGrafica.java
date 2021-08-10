@@ -4,17 +4,14 @@ import java.util.ArrayList;
 
 public class PantallaGrafica
 {
-    private ArrayList<Terreno> terrenos = new ArrayList<Terreno>();
-    private int cantTerrenos;
+    /*
     private double suma;
     
-    /**
-     * Preguntar los datos de los terrenos
-     */
+    
     public void preguntarDatos()
     {
-        cantTerrenos = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese la cantidad de terrenos: "));
-        
+        int cantTerrenos = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese la cantidad de terrenos: "));
+        ListaTerrenos terrenos = new ListaTerrenos();
         for(int i = 0; i < cantTerrenos ; i++)
         {
             String[] tiposTerreno = { "Triangular", "Rectangular", "Trapezoidal" }; 
@@ -33,6 +30,7 @@ public class PantallaGrafica
             {
                 terrenos.add(new TerrenoRectangular(largo, ancho, sector));
             }
+     
             else if (forma.toLowerCase().trim().equals("triangular"))
             {
                 terrenos.add(new TerrenoTriangular(largo, ancho, sector));
@@ -45,9 +43,7 @@ public class PantallaGrafica
         }
     }
     
-    /**
-     * Realizar el cálculo de los precios de los terrenos
-     */
+    
     public void calcularPrecio()
     {
         suma = 0;
@@ -57,9 +53,7 @@ public class PantallaGrafica
         }
     }
     
-    /**
-     * Presentar la suma de los datos
-     */
+   
     public void mostrarSuma()
     {
         DecimalFormat formato = new DecimalFormat("#,###.00");
@@ -69,6 +63,7 @@ public class PantallaGrafica
         }
         JOptionPane.showMessageDialog(null, "El valor total de los terrenos es $ "+formato.format(suma));
     }
+    */
 }
 
 

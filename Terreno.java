@@ -1,11 +1,12 @@
 public abstract class Terreno implements ContratoTerreno
 {
+    protected int id;
+    protected String direccion;
+    protected String ciudad;
+    protected String sector;
     protected double largo;
     protected double ancho;
-    protected String sector;
-    protected double area;
-    protected double valorXm2;
-    protected double precio;
+    
     
     public Terreno()
     {
@@ -14,6 +15,7 @@ public abstract class Terreno implements ContratoTerreno
         this.sector = "";
     }
     
+    
     public Terreno(double largo, double ancho, String sector)
     {
         this.largo = largo;
@@ -21,57 +23,105 @@ public abstract class Terreno implements ContratoTerreno
         this.sector = sector;
     }
     
-    public void setLargo(double largo)
+    
+    public Terreno(String direccion, String ciudad, String sector, double largo, double ancho)
     {
+        this.direccion = direccion;
+        this.ciudad = ciudad;
+        this.sector = sector;
         this.largo = largo;
-    }
-    
-    public double getLargo()
-    {
-        return this.largo;
-    }
-    
-    public void setAncho(double ancho)
-    {
         this.ancho = ancho;
     }
     
-    public double getAncho()
+    
+    public void setId(int id)
     {
-        return this.ancho;
+        this.id = id;
     }
+    
+    
+    public int getId()
+    {
+        return this.id;
+    }
+    
+    
+    public String getDireccion()
+    {
+        return this.direccion;
+    }
+    
+    
+    public void setDireccion(String direccion)
+    {
+        this.direccion = direccion;
+    }
+    
+    
+    public String getCiudad()
+    {
+        return this.ciudad;
+    }
+    
+    
+    public void setCiudad(String ciudad)
+    {
+        this.ciudad = ciudad;
+    }
+    
     
     public void setSector(String sector)
     {
         this.sector = sector;
     }
     
+    
     public String getSector()
     {
         return this.sector;
     }
     
+    
+    public void setLargo(double largo)
+    {
+        this.largo = largo;
+    }
+    
+    
+    public double getLargo()
+    {
+        return this.largo;
+    }
+    
+    
+    public void setAncho(double ancho)
+    {
+        this.ancho = ancho;
+    }
+    
+    
+    public double getAncho()
+    {
+        return this.ancho;
+    }
+    
+    
     public abstract double getArea();
+    
     
     public double getValorXm2()
     {
-        if (sector.toLowerCase().equals("urbano")) 
-        {
-            valorXm2=3000000;
-        }
-        else
-        {
-            valorXm2=1800000;
-        }
+        double valorXm2 = sector.toLowerCase().equals("urbano") ? 3000000 : 1800000;
         return valorXm2;
     }
     
+    
     public double getPrecio()
     {
-        precio = getValorXm2() * getArea();
+        double precio = getValorXm2() * getArea();
         return precio;
     }
     
-    public abstract String toString();
     
+    public abstract String toString();
 }
